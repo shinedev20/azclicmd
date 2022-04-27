@@ -1,0 +1,292 @@
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops
+$ git clone https://github.com/HayGroup/ppr_devops.git
+Cloning into 'ppr_devops'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops
+$ git branch
+fatal: not a git repository (or any of the parent directories): .git
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops
+$ git init
+Initialized empty Git repository in D:/ppr_devops/ppr_devops/.git/
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops (master)
+$ git branch -r
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops (master)
+$ git remote -v
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops (master)
+$ git add .
+warning: adding embedded git repository: ppr_devops
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint:   git submodule add <url> ppr_devops
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint:   git rm --cached ppr_devops
+hint:
+hint: See "git help submodule" for more information.
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops (master)
+$ git commit -m "updated script"
+[master (root-commit) 9ec9a7f] updated script
+ 1 file changed, 1 insertion(+)
+ create mode 160000 ppr_devops
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops (master)
+$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops (master)
+$ git remote add main https://github.com/HayGroup/ppr_devops.git
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops (master)
+$ git remote -v
+main    https://github.com/HayGroup/ppr_devops.git (fetch)
+main    https://github.com/HayGroup/ppr_devops.git (push)
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops (master)
+$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops (master)
+$ git push origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'origin'
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops (master)
+$ git push master main
+error: src refspec main does not match any
+error: failed to push some refs to 'master'
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops (master)
+$ git push main master
+Enumerating objects: 2, done.
+Counting objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 214 bytes | 214.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/HayGroup/ppr_devops/pull/new/master
+remote:
+To https://github.com/HayGroup/ppr_devops.git
+ * [new branch]      master -> master
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops (master)
+$ git add .
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops (master)
+$ git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops (master)
+$ git branch main
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops (master)
+$ git checkout main
+Switched to branch 'main'
+M       ppr_devops
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops (main)
+$ ls
+ppr_devops/
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops (main)
+$ cd ppr_devops/
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ ls
+README.md                      docker-compose.yml  main2paas.txt
+addons-pipelines.yml           extension.sh        statefilescript.ps1
+azure-agent-pipelines.yml      main.tf             var.tf
+azure-self-agent-pipeline.yml  main1rgnet.txt
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ git add .
+warning: LF will be replaced by CRLF in extension.sh.
+The file will have its original line endings in your working directory
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ git commit -m "updated script"
+[main 3efa42f] updated script
+ 11 files changed, 7767 insertions(+), 1 deletion(-)
+ create mode 100644 addons-pipelines.yml
+ create mode 100644 azure-agent-pipelines.yml
+ create mode 100644 azure-self-agent-pipeline.yml
+ create mode 100644 docker-compose.yml
+ create mode 100644 extension.sh
+ create mode 100644 main.tf
+ create mode 100644 main1rgnet.txt
+ create mode 100644 main2paas.txt
+ create mode 100644 statefilescript.ps1
+ create mode 100644 var.tf
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ git push main main
+fatal: 'main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ git init
+Reinitialized existing Git repository in D:/ppr_devops/ppr_devops/ppr_devops/.git/
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ git push main main
+fatal: 'main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ git remote -v
+origin  https://github.com/HayGroup/ppr_devops.git (fetch)
+origin  https://github.com/HayGroup/ppr_devops.git (push)
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ git push origin main
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (13/13), 20.25 KiB | 2.89 MiB/s, done.
+Total 13 (delta 3), reused 0 (delta 0), pack-reused 0
+send-pack: unexpected disconnect while reading sideband packet
+fatal: the remote end hung up unexpectedly
+Everything up-to-date
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ git remote -v
+origin  https://github.com/HayGroup/ppr_devops.git (fetch)
+origin  https://github.com/HayGroup/ppr_devops.git (push)
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ git remote add main https://github.com/HayGroup/ppr_devops.git
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ git remote -v
+main    https://github.com/HayGroup/ppr_devops.git (fetch)
+main    https://github.com/HayGroup/ppr_devops.git (push)
+origin  https://github.com/HayGroup/ppr_devops.git (fetch)
+origin  https://github.com/HayGroup/ppr_devops.git (push)
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ git push main main
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (13/13), 20.25 KiB | 3.38 MiB/s, done.
+Total 13 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), done.
+To https://github.com/HayGroup/ppr_devops.git
+   e25120f..3efa42f  main -> main
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ ls
+README.md                      docker-compose.yml  main2paas.txt
+addons-pipelines.yml           extension.sh        statefilescript.ps1
+azure-agent-pipelines.yml      main.tf             var.tf
+azure-self-agent-pipeline.yml  main1rgnet.txt
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ rm README.md
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ ls
+addons-pipelines.yml           docker-compose.yml  main1rgnet.txt       var.tf
+azure-agent-pipelines.yml      extension.sh        main2paas.txt
+azure-self-agent-pipeline.yml  main.tf             statefilescript.ps1
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ git add .
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ git commit -m "removed readme file"
+[main 9bb7367] removed readme file
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 README.md
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 235 bytes | 235.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/HayGroup/ppr_devops.git
+   3efa42f..9bb7367  main -> main
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ git pull
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 661 bytes | 2.00 KiB/s, done.
+From https://github.com/HayGroup/ppr_devops
+   9bb7367..94277f1  main       -> origin/main
+Updating 9bb7367..94277f1
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ git remote -v
+main    https://github.com/HayGroup/ppr_devops.git (fetch)
+main    https://github.com/HayGroup/ppr_devops.git (push)
+origin  https://github.com/HayGroup/ppr_devops.git (fetch)
+origin  https://github.com/HayGroup/ppr_devops.git (push)
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ git branch
+* main
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ git branch -a
+* main
+  remotes/main/main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$ git branch -r
+  main/main
+  origin/HEAD -> origin/main
+  origin/main
+
+58878@LTPU-5RVRM13 MINGW64 /d/ppr_devops/ppr_devops/ppr_devops (main)
+$
